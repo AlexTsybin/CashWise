@@ -28,7 +28,7 @@ subprojects {
                         "ktlint_standard_filename" to "disabled",
                         "ij_kotlin_allow_trailing_comma_on_call_site" to "false",
                         "ij_kotlin_line_break_after_multiline_when_entry" to "false",
-                        "ktlint_standard_no_empty_first_line_in_method_block" to "enabled",
+                        "ktlint_standard_no-empty-first-line-in-method-block" to "enabled",
                         "ktlint_function_signature_body_expression_wrapping" to "multiline",
                         "ktlint_function_signature_rule_force_multiline_when_parameter_count_greater_or_equal_than" to "2",
                         "ktlint_function_naming_ignore_when_annotated_with" to "Composable, Test",
