@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete merged branch
-        uses: koj-co/delete-merged-action@master
+        uses: finnp/delete-merged-branch@master
         with:
           branches: "!main, !production, *"
         env:
