@@ -25,9 +25,9 @@ subprojects {
                 .editorConfigOverride(
                     mapOf(
                         "max_line_length" to "140",
-//                        "ij_kotlin_allow_trailing_comma" to "true",
+                        "ij_kotlin_allow_trailing_comma" to "true",
                         "ktlint_standard_filename" to "disabled",
-//                        "ij_kotlin_allow_trailing_comma_on_call_site" to "true",
+                        "ij_kotlin_allow_trailing_comma_on_call_site" to "true",
                         "ktlint_standard_trailing-comma" to "disabled",
                         "ktlint_standard_final-newline" to "disabled",
                         "ktlint_standard_indent" to "disabled",
