@@ -1,4 +1,4 @@
-package com.alextsy.cashwise.ui.theme
+package com.alextsy.designsystem.theme
 
 import android.app.Activity
 import android.os.Build
