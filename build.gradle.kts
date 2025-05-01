@@ -32,7 +32,6 @@ subprojects {
                         "ktlint_standard_final-newline" to "disabled",
                         "ktlint_standard_indent" to "disabled",
                         "ktlint_standard_no-semi" to "disabled",
-                        "ktlint_standard_wrapping" to "disabled",
                         "ij_kotlin_line_break_after_multiline_when_entry" to "false",
                         "ktlint_standard_no-empty-first-line-in-method-block" to "disabled",
                         "ktlint_function_signature_body_expression_wrapping" to "multiline",
