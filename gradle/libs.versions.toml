@@ -15,6 +15,11 @@ appcompat = "1.7.0"
 material = "1.12.0"
 uiTooling = "1.7.6"
 lottieCompose = "4.0.0"
+koinBom = "4.0.1"
+androidxCoreSplashscreen = "1.0.1"
+composeNavigation = "2.8.5"
+kotlinxSerializationJson = "1.6.1"
+materialVersion = "1.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,9 +45,28 @@ ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref =
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
 
+#Koin
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { module = "io.insert-koin:koin-android" }
+koin-compose = { module = "io.insert-koin:koin-androidx-compose" }
+koin-compose-navigation = { module = "io.insert-koin:koin-androidx-compose-navigation" }
+koin-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel" }
+
+#Splash
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidxCoreSplashscreen" }
+
+#Navigation
+navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+
+#Kotlin serialization
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

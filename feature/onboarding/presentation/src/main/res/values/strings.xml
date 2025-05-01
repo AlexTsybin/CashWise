@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_app_name">CashWise</string>
+    <string name="welcome_text">Welcome to</string>
+    <string name="welcome_description">Manage your\nfinance wisely</string>
+    <string name="welcome_get_started">Get Started</string>
+</resources>

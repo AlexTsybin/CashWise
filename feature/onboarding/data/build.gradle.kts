@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.alextsy.designsystem"
+    namespace = "com.alextsy.onboarding.data"
     compileSdk = 35
 
     defaultConfig {
@@ -25,23 +24,19 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "11"
-    }
-    buildFeatures {
-        compose = true
+        jvmTarget = "21"
     }
 }
 
 dependencies {
-    api(libs.androidx.core.ktx)
-    api(libs.androidx.appcompat)
-    api(platform(libs.androidx.compose.bom))
-    api(libs.androidx.ui.tooling.preview)
-    api(libs.androidx.material3)
-    debugImplementation(libs.ui.tooling)
-    implementation(libs.lottie.compose)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

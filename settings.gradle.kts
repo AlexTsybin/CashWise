@@ -24,3 +24,6 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "CashWise"
 include(":app")
 include(":designsystem")
+include(":feature:onboarding:presentation")
+include(":feature:onboarding:domain")
+include(":feature:onboarding:data")
