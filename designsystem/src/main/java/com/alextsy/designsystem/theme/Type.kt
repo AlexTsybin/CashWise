@@ -1,4 +1,4 @@
-package com.alextsy.cashwise.ui.theme
+package com.alextsy.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
