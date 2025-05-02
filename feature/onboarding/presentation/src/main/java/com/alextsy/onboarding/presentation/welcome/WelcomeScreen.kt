@@ -32,7 +32,9 @@ fun WelcomeScreen(
 }
 
 @Composable
-private fun Welcome(onNextScreen: () -> Unit) {
+private fun Welcome(
+    onNextScreen: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()

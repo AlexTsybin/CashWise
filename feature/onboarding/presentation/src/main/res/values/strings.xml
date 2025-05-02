@@ -4,4 +4,25 @@
     <string name="welcome_text">Welcome to</string>
     <string name="welcome_description">Manage your\nfinance wisely</string>
     <string name="welcome_get_started">Get Started</string>
+
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+
+    <string-array name="onboarding_title">
+        <item>SPENDING ANALYSIS</item>
+        <item>SPENDING RECORDS</item>
+        <item>SPENDING CATEGORY</item>
+    </string-array>
+
+    <string-array name="onboarding_description">
+        <item>See where your money goes at a glance</item>
+        <item>Easily track income and expenses in one place</item>
+        <item>Sort records into custom categories</item>
+    </string-array>
+
+    <string-array name="onboarding_animation">
+        <item>https://cdn.lottielab.com/l/C5tjXQCQJaB3ta.json</item>
+        <item>https://cdn.lottielab.com/l/9oCpPkK7qw6zhZ.json</item>
+        <item>https://cdn.lottielab.com/l/EUqFw672Yjc2ZT.json</item>
+    </string-array>
 </resources>
