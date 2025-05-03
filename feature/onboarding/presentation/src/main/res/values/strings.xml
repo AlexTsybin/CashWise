@@ -25,4 +25,12 @@
         <item>https://cdn.lottielab.com/l/9oCpPkK7qw6zhZ.json</item>
         <item>https://cdn.lottielab.com/l/EUqFw672Yjc2ZT.json</item>
     </string-array>
+
+    <string name="sign_in_title_text">Sign in to your Account</string>
+    <string name="sign_in_title_span">Sign in</string>
+    <string name="sign_in_google_button">Sign up with Google</string>
+    <string name="sign_in_guest_button">Continue as guest</string>
+    <string name="sign_in_tnc_text">By signing up, you agree to the Terms of Service and Data Processing Agreement</string>
+    <string name="sign_in_tnc_span_1">Terms of Service</string>
+    <string name="sign_in_tnc_span_2">Data Processing Agreement</string>
 </resources>
