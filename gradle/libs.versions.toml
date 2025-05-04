@@ -20,6 +20,12 @@ androidxCoreSplashscreen = "1.0.1"
 composeNavigation = "2.8.5"
 kotlinxSerializationJson = "1.6.1"
 materialVersion = "1.12.0"
+jetbrainsKotlinJvm = "2.0.21"
+arrowCore = "1.2.0-RC"
+protobuf = "4.26.1"
+datastore = "1.1.2"
+protobufPlugin = "0.9.4"
+composeRuntime = "1.7.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -61,6 +67,16 @@ navigation-compose = { module = "androidx.navigation:navigation-compose", versio
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 
+#Arrow
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrowCore" }
+
+#Datastore
+androidx-datastore = { group = "androidx.datastore", name = "datastore", version.ref = "datastore" }
+androidx-datastore-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastore" }
+protobuf-protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf" }
+protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protobuf" }
+androisx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "composeRuntime" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -70,3 +86,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 
 #Kotlin serialization
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+
+#Protobuf
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
