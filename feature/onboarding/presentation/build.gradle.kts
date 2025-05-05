@@ -38,6 +38,7 @@ android {
 
 dependencies {
     implementation(projects.designsystem)
+    implementation(projects.feature.onboarding.domain)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.koin.bom))
