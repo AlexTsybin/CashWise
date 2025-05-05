@@ -26,18 +26,23 @@ import com.alextsy.designsystem.component.text.TextType
 import com.alextsy.designsystem.component.text.createAnnotatedString
 import com.alextsy.designsystem.theme.LocalDimensions
 import com.alextsy.onboarding.presentation.R
+import com.alextsy.onboarding.presentation.mvi.Event
+import com.alextsy.onboarding.presentation.mvi.OnboardingViewModel
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun IntroductionScreen(
-    onNextScreen: () -> Unit
+    onNextScreen: () -> Unit,
+    viewModel: OnboardingViewModel = koinViewModel(),
 ) {
-    Onboarding(onNextScreen)
+    Onboarding(onNextScreen, viewModel::event)
 }
 
 @Composable
 private fun Onboarding(
-    onNextScreen: () -> Unit
+    onNextScreen: () -> Unit,
+    dispatch: (Event) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -101,6 +106,7 @@ private fun Onboarding(
                 if (pagerState.currentPage < pageCount - 1) {
                     pagerState.animateScrollToPage(pagerState.currentPage + 1)
                 } else {
+                    dispatch(Event.OnboardingCompleted)
                     onNextScreen.invoke()
                 }
             }
@@ -111,6 +117,7 @@ private fun Onboarding(
             isFullWidth = true,
             buttonType = ButtonType.TEXT
         ) {
+            dispatch(Event.OnboardingCompleted)
             onNextScreen.invoke()
         }
     }
