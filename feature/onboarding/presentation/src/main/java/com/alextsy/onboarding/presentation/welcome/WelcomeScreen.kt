@@ -23,17 +23,22 @@ import com.alextsy.designsystem.component.text.CwText
 import com.alextsy.designsystem.component.text.TextType
 import com.alextsy.designsystem.theme.LocalDimensions
 import com.alextsy.onboarding.presentation.R
+import com.alextsy.onboarding.presentation.mvi.Event
+import com.alextsy.onboarding.presentation.mvi.OnboardingViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun WelcomeScreen(
-    onNextScreen: () -> Unit
+    onNextScreen: () -> Unit,
+    viewModel: OnboardingViewModel = koinViewModel()
 ) {
-    Welcome(onNextScreen)
+    Welcome(onNextScreen, viewModel::event)
 }
 
 @Composable
 private fun Welcome(
-    onNextScreen: () -> Unit
+    onNextScreen: () -> Unit,
+    dispatch: (Event) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -86,6 +91,7 @@ private fun Welcome(
             text = stringResource(R.string.welcome_get_started),
             isFullWidth = false,
             onClick = {
+                dispatch(Event.OnboardingInProgress)
                 onNextScreen()
             }
         )

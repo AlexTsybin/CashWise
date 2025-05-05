@@ -2,11 +2,13 @@ package com.alextsy.main.presentation.navigation
 
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import com.alextsy.common.model.OnboardingConfig
 import com.alextsy.designsystem.utility.UiText
 import com.alextsy.onboarding.presentation.intro.IntroductionScreen
 import com.alextsy.onboarding.presentation.signin.SignInScreen
@@ -35,10 +37,11 @@ inline fun <reified T> NavGraphBuilder.cwComposable(
 
 fun NavGraphBuilder.navigateToOnboarding(
     navController: NavHostController,
+    onboardingConfig: OnboardingConfig,
     onError: (Boolean, UiText) -> Unit
 ) {
     navigation<Graphs.Onboarding>(
-        startDestination = Destinations.Welcome
+        startDestination = getDestination(onboardingConfig)
     ) {
         cwComposable<Destinations.Welcome> {
             WelcomeScreen(
@@ -60,3 +63,23 @@ fun NavGraphBuilder.navigateToOnboarding(
         }
     }
 }
+
+fun NavGraphBuilder.navigateToDashboard(
+    navController: NavHostController
+) {
+    navigation<Graphs.Dashboard>(
+        startDestination = Destinations.Home
+    ) {
+        cwComposable<Destinations.Home> {
+            Text("Home")
+        }
+    }
+}
+
+private fun getDestination(onboardingConfig: OnboardingConfig) =
+    when (onboardingConfig) {
+        OnboardingConfig.NOT_STARTED -> Destinations.Welcome
+        OnboardingConfig.IN_PROGRESS -> Destinations.Introduction
+        OnboardingConfig.COMPLETED -> Destinations.SignIn
+        else -> Destinations.Welcome
+    }

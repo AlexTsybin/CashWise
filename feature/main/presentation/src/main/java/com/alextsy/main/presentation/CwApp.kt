@@ -1,5 +1,6 @@
 package com.alextsy.main.presentation
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -8,17 +9,23 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.alextsy.common.model.AuthConfig
+import com.alextsy.common.model.ThemeConfig
 import com.alextsy.designsystem.component.container.ScreenContainer
 import com.alextsy.designsystem.theme.CashWiseTheme
 import com.alextsy.designsystem.utility.UiText
+import com.alextsy.main.presentation.mvi.UiState
 import com.alextsy.main.presentation.navigation.Graphs
 import com.alextsy.main.presentation.navigation.navigateToOnboarding
+import com.alextsy.main.presentation.navigation.navigateToDashboard
 import kotlinx.coroutines.delay
 
 @Composable
-fun CwApp() {
+fun CwApp(
+    uiState: UiState.Success
+) {
     val navController = rememberNavController()
-    CashWiseTheme {
+    CashWiseTheme(darkTheme = isDarkTheme(uiState)) {
         var showErrorMessage by remember { mutableStateOf(false) }
         var errorMessage by remember { mutableStateOf<UiText>(UiText.EmptyString) }
 
@@ -32,13 +39,35 @@ fun CwApp() {
         ScreenContainer(showErrorMessage, errorMessage.toString()) {
             NavHost(
                 navController = navController,
-                startDestination = Graphs.Onboarding
+                startDestination = getDestination(uiState.data.authType)
             ) {
-                navigateToOnboarding(navController) { showError, message ->
+                navigateToOnboarding(
+                    navController,
+                    onboardingConfig = uiState.data.onboardingStatus
+                ) { showError, message ->
                     showErrorMessage = showError
                     errorMessage = message
                 }
+                navigateToDashboard(navController)
             }
+        }
+    }
+}
+
+private fun getDestination(authConfig: AuthConfig) =
+    when (authConfig) {
+        AuthConfig.AUTHENTICATED -> Graphs.Dashboard
+        else -> Graphs.Onboarding
+    }
+
+@Composable
+private fun isDarkTheme(uiState: UiState): Boolean {
+    return when (uiState) {
+        UiState.Loading -> false
+        is UiState.Success -> when (uiState.data.theme) {
+            ThemeConfig.SYSTEM -> isSystemInDarkTheme()
+            ThemeConfig.LIGHT -> false
+            ThemeConfig.DARK -> true
         }
     }
 }
