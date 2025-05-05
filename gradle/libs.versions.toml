@@ -26,6 +26,10 @@ protobuf = "4.26.1"
 datastore = "1.1.2"
 protobufPlugin = "0.9.4"
 composeRuntime = "1.7.6"
+firebaseAuth = "23.1.0"
+googleid = "1.1.1"
+googleGmsGoogleServices = "4.4.2"
+credentials = "1.5.0-rc01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -78,6 +82,11 @@ protobuf-protoc = { group = "com.google.protobuf", name = "protoc", version.ref 
 protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protobuf" }
 androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "composeRuntime" }
 
+#Furebase auth
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
+androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -91,3 +100,5 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 
 #Protobuf
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

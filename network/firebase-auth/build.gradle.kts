@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.alextsy.designsystem"
+    namespace = "com.alextsy.network.firebase_auth"
     compileSdk = 35
 
     defaultConfig {
@@ -20,7 +19,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
+                "proguard-rules.pro"
             )
         }
     }
@@ -31,19 +30,19 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
-    api(libs.androidx.core.ktx)
-    api(libs.androidx.appcompat)
-    api(platform(libs.androidx.compose.bom))
-    api(libs.androidx.ui.tooling.preview)
-    api(libs.androidx.material3)
-    implementation(libs.androidx.credentials)
-    api(libs.googleid)
-    debugImplementation(libs.ui.tooling)
-    implementation(libs.lottie.compose)
+    implementation(projects.common.model)
+    implementation(libs.firebase.auth)
+    implementation(libs.googleid)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    api(platform(libs.koin.bom))
+    api(libs.koin.android)
+    api(libs.koin.core)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

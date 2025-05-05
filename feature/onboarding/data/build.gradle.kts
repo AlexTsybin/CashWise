@@ -35,7 +35,7 @@ android {
 dependencies {
     implementation(projects.feature.onboarding.domain)
     implementation(projects.storage.datastore)
-
+    implementation(projects.network.firebaseAuth)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
