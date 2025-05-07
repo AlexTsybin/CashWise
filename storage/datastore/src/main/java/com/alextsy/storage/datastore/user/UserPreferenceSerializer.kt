@@ -20,7 +20,7 @@ class UserPreferenceSerializer : Serializer<UserPreferences> {
 
     override suspend fun writeTo(
         t: UserPreferences,
-        output: OutputStream
+        output: OutputStream,
     ) {
         withContext(Dispatchers.IO) {
             t.writeTo(output)

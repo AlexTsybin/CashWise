@@ -12,21 +12,21 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 @Composable
 fun Lottie(
     lottieUrl: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     val preloaderLottieComposition by rememberLottieComposition(
-        LottieCompositionSpec.Url(url = lottieUrl)
+        LottieCompositionSpec.Url(url = lottieUrl),
     )
 
     val preloaderProgress by animateLottieCompositionAsState(
         preloaderLottieComposition,
         iterations = LottieConstants.IterateForever,
-        isPlaying = true
+        isPlaying = true,
     )
 
     LottieAnimation(
         modifier = modifier,
         composition = preloaderLottieComposition,
-        progress = preloaderProgress
+        progress = preloaderProgress,
     )
 }

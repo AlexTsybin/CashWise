@@ -30,7 +30,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun WelcomeScreen(
     onNextScreen: () -> Unit,
-    viewModel: OnboardingViewModel = koinViewModel()
+    viewModel: OnboardingViewModel = koinViewModel(),
 ) {
     Welcome(onNextScreen, viewModel::event)
 }
@@ -38,7 +38,7 @@ fun WelcomeScreen(
 @Composable
 private fun Welcome(
     onNextScreen: () -> Unit,
-    dispatch: (Event) -> Unit
+    dispatch: (Event) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -47,15 +47,15 @@ private fun Welcome(
                 start = LocalDimensions.current.dimensions16,
                 top = LocalDimensions.current.dimensions16,
                 end = LocalDimensions.current.dimensions16,
-                bottom = LocalDimensions.current.dimensions32
+                bottom = LocalDimensions.current.dimensions32,
             ),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = LocalDimensions.current.dimensions48),
-            horizontalArrangement = Arrangement.SpaceAround
+            horizontalArrangement = Arrangement.SpaceAround,
         ) {
             Image(
                 painter = painterResource(id = com.alextsy.designsystem.R.drawable.welcome_logo),
@@ -63,26 +63,26 @@ private fun Welcome(
                     .size(LocalDimensions.current.dimensions128)
                     .padding(LocalDimensions.current.dimensions4)
                     .clip(CircleShape),
-                contentDescription = "condition"
+                contentDescription = "condition",
             )
             Column(
                 modifier = Modifier
                     .padding(start = LocalDimensions.current.dimensions2)
                     .align(Alignment.CenterVertically),
                 verticalArrangement = Arrangement.spacedBy(LocalDimensions.current.dimensions8),
-                horizontalAlignment = Alignment.End
+                horizontalAlignment = Alignment.End,
             ) {
                 CwText(
                     text = stringResource(R.string.welcome_text),
-                    textType = TextType.TITLE
+                    textType = TextType.TITLE,
                 )
                 CwText(
                     text = stringResource(R.string.welcome_app_name),
-                    textType = TextType.DISPLAY_SMALL_GRADIENT
+                    textType = TextType.DISPLAY_SMALL_GRADIENT,
                 )
                 CwText(
                     text = stringResource(R.string.welcome_description),
-                    textType = TextType.LABEL_SMALL
+                    textType = TextType.LABEL_SMALL,
                 )
             }
         }
@@ -93,7 +93,7 @@ private fun Welcome(
             onClick = {
                 dispatch(Event.OnboardingInProgress)
                 onNextScreen()
-            }
+            },
         )
     }
 }
@@ -103,7 +103,7 @@ private fun Welcome(
 private fun WelcomeScreenPreview() {
     PreviewSurface {
         WelcomeScreen(
-            onNextScreen = {}
+            onNextScreen = {},
         )
     }
 }

@@ -14,10 +14,11 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 
 class UserPreferenceRepoImpl(
-    private val source: UserDataSource
+    private val source: UserDataSource,
 ) : UserPreferenceRepository {
 
-    override fun getUserPreference(): Flow<UserPref> = flow {
+    override fun getUserPreference(): Flow<UserPref> =
+        flow {
         emit(
             source.userData().first().let {
                 UserPref(
@@ -40,9 +41,9 @@ class UserPreferenceRepoImpl(
                         else -> ThemeConfig.SYSTEM
                     },
                     isNotificationEnabled = it.isNotificationEnabled,
-                    defaultCurrency = it.defaultCurrency
+                    defaultCurrency = it.defaultCurrency,
                 )
-            }
+            },
         )
     }
 }

@@ -14,11 +14,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.alextsy.main.presentation.mvi.MainViewModel
 import com.alextsy.main.presentation.mvi.UiState
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
-
 
 class MainActivity : ComponentActivity() {
 
@@ -49,7 +46,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             if (uiState is UiState.Success) {
-                CwApp(uiState as UiState.Success )
+                CwApp(uiState as UiState.Success)
             }
         }
     }

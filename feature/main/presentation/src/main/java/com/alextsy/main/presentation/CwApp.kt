@@ -16,14 +16,12 @@ import com.alextsy.designsystem.theme.CashWiseTheme
 import com.alextsy.designsystem.utility.UiText
 import com.alextsy.main.presentation.mvi.UiState
 import com.alextsy.main.presentation.navigation.Graphs
-import com.alextsy.main.presentation.navigation.navigateToOnboarding
 import com.alextsy.main.presentation.navigation.navigateToDashboard
+import com.alextsy.main.presentation.navigation.navigateToOnboarding
 import kotlinx.coroutines.delay
 
 @Composable
-fun CwApp(
-    uiState: UiState.Success
-) {
+fun CwApp(uiState: UiState.Success) {
     val navController = rememberNavController()
     CashWiseTheme(darkTheme = isDarkTheme(uiState)) {
         var showErrorMessage by remember { mutableStateOf(false) }
@@ -36,14 +34,14 @@ fun CwApp(
             }
         }
 
-        ScreenContainer(showErrorMessage, errorMessage.toString()) {
+        ScreenContainer(showErrorMessage, errorMessage) {
             NavHost(
                 navController = navController,
-                startDestination = getDestination(uiState.data.authType)
+                startDestination = getDestination(uiState.data.authType),
             ) {
                 navigateToOnboarding(
                     navController,
-                    onboardingConfig = uiState.data.onboardingStatus
+                    onboardingConfig = uiState.data.onboardingStatus,
                 ) { showError, message ->
                     showErrorMessage = showError
                     errorMessage = message

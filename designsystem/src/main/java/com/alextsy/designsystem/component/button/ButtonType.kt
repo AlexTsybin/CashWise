@@ -13,34 +13,38 @@ import com.alextsy.designsystem.theme.LocalDimensions
 enum class ButtonType {
     FILLED_TONAL,
     TEXT,
-    ELEVATED
+    ELEVATED,
 }
 
-fun ButtonType.getTextType() = when (this) {
+fun ButtonType.getTextType() =
+    when (this) {
     ButtonType.FILLED_TONAL -> TextType.BUTTON_LABEL
     ButtonType.TEXT -> TextType.LABEL_SMALL
     ButtonType.ELEVATED -> TextType.LABEL_LARGE
 }
 
 @Composable
-fun ButtonType.getButtonElevation() = when (this) {
+fun ButtonType.getButtonElevation() =
+    when (this) {
     ButtonType.FILLED_TONAL -> ButtonDefaults.filledTonalButtonElevation()
     ButtonType.TEXT -> ButtonDefaults.buttonElevation()
     ButtonType.ELEVATED -> ButtonDefaults.elevatedButtonElevation()
 }
 
 @Composable
-fun ButtonType.getButtonColor() = when (this) {
+fun ButtonType.getButtonColor() =
+    when (this) {
     ButtonType.FILLED_TONAL -> ButtonDefaults.buttonColors(
         containerColor = MaterialTheme.colorScheme.primary,
-        contentColor = MaterialTheme.colorScheme.onPrimary
+        contentColor = MaterialTheme.colorScheme.onPrimary,
     )
     ButtonType.TEXT -> ButtonDefaults.textButtonColors()
     ButtonType.ELEVATED -> ButtonDefaults.elevatedButtonColors()
 }
 
 @Composable
-fun Modifier.buttonWidth(isFullWith: Boolean) = if (isFullWith) {
+fun Modifier.buttonWidth(isFullWith: Boolean) =
+    if (isFullWith) {
     fillMaxWidth()
 } else {
     width(LocalDimensions.current.dimensions180)

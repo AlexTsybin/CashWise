@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 
 class MainViewModel(
-    repository: UserPreferenceRepository
+    repository: UserPreferenceRepository,
 ) : ViewModel() {
 
     val uiState: StateFlow<UiState> = repository.getUserPreference().map {
@@ -18,6 +18,6 @@ class MainViewModel(
     }.distinctUntilChanged().stateIn(
         scope = viewModelScope,
         initialValue = UiState.Loading,
-        started = SharingStarted.WhileSubscribed(5_000)
+        started = SharingStarted.WhileSubscribed(5_000),
     )
 }

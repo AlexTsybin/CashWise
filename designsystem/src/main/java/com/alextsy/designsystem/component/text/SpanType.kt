@@ -12,24 +12,24 @@ sealed class SpanType(open val text: String) {
     data class UrlSpan(
         override val text: String,
         val url: String,
-        val styles: TextLinkStyles
+        val styles: TextLinkStyles,
     ) : SpanType(text)
 
     data class ClickSpan(
         override val text: String,
         val styles: TextLinkStyles,
-        val onClick: () -> Unit
+        val onClick: () -> Unit,
     ) : SpanType(text)
 
     data class HeadingSpan(
         override val text: String,
-        val styles: SpanStyle
+        val styles: SpanStyle,
     ) : SpanType(text)
 }
 
 fun createAnnotatedString(
     fullText: String,
-    spans: List<SpanType>
+    spans: List<SpanType>,
 ) = buildAnnotatedString {
     var currentIndex = 0
     spans.forEach { spanInfo ->
@@ -44,7 +44,8 @@ fun createAnnotatedString(
                         }
 
                     is SpanType.ClickSpan -> withLink(
-                        LinkAnnotation.Clickable(text, styles) { onClick() }) {
+                        LinkAnnotation.Clickable(text, styles) { onClick() },
+                    ) {
                             append(text)
                         }
 
