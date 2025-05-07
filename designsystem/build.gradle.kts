@@ -43,6 +43,7 @@ dependencies {
     api(libs.androidx.ui.tooling.preview)
     api(libs.androidx.material3)
     implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.services)
     api(libs.googleid)
     debugImplementation(libs.ui.tooling)
     implementation(libs.lottie.compose)
