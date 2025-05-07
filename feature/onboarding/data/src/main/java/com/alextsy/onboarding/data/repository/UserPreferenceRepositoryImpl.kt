@@ -6,11 +6,10 @@ import com.alextsy.onboarding.domain.UserPreferenceRepository
 import com.alextsy.storage.datastore.user.UserDataSource
 
 class UserPreferenceRepositoryImpl(
-    private val source: UserDataSource
+    private val source: UserDataSource,
 ) : UserPreferenceRepository {
 
     override suspend fun saveUserAuth(authType: AuthConfig) = source.setAuthType(authType)
 
-    override suspend fun saveUserOnboardingStatus(onboardingStatus: OnboardingConfig) =
-        source.setOnboardingStatus(onboardingStatus)
+    override suspend fun saveUserOnboardingStatus(onboardingStatus: OnboardingConfig) = source.setOnboardingStatus(onboardingStatus)
 }

@@ -12,7 +12,7 @@ import com.alextsy.storage.datastore.data.copy
 import kotlinx.coroutines.flow.Flow
 
 class UserDataSource(
-    private val datastore: DataStore<UserPreferences>
+    private val datastore: DataStore<UserPreferences>,
 ) {
 
     fun userData(): Flow<UserPreferences> {
@@ -55,7 +55,7 @@ class UserDataSource(
         }
     }
 
-    suspend fun setDefaultCurrency(currency : String) {
+    suspend fun setDefaultCurrency(currency: String) {
         datastore.updateData {
             it.copy {
                 defaultCurrency = currency

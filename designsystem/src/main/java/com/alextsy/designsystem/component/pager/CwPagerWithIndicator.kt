@@ -30,15 +30,15 @@ fun PagerWithIndicator(
     pageCount: Int,
     modifier: Modifier = Modifier,
     pagerState: PagerState,
-    content: @Composable (pageIndex: Int) -> Unit
+    content: @Composable (pageIndex: Int) -> Unit,
 ) {
     Column(
         modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         HorizontalPager(
             modifier = Modifier.weight(1f),
-            state = pagerState
+            state = pagerState,
         ) { page ->
             content(page)
         }
@@ -47,7 +47,7 @@ fun PagerWithIndicator(
 
         PagerIndicator(
             currentPage = pagerState.currentPage,
-            pageCount = pageCount
+            pageCount = pageCount,
         )
     }
 }
@@ -55,11 +55,11 @@ fun PagerWithIndicator(
 @Composable
 fun PagerIndicator(
     currentPage: Int,
-    pageCount: Int
+    pageCount: Int,
 ) {
     Row(
         horizontalArrangement = Arrangement.spacedBy(LocalDimensions.current.dimensions8),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         repeat(pageCount) { index ->
             val isSelected = index == currentPage
@@ -74,7 +74,7 @@ fun PagerIndicator(
                 } else {
                     LocalDimensions.current.dimensions8
                 },
-                label = "widthAnimation"
+                label = "widthAnimation",
             )
             val color = if (isSelected) {
                 MaterialTheme.colorScheme.primary
@@ -87,7 +87,7 @@ fun PagerIndicator(
                     .width(width.value)
                     .size(LocalDimensions.current.dimensions8)
                     .clip(shape)
-                    .background(color)
+                    .background(color),
             )
         }
     }
@@ -97,16 +97,16 @@ fun PagerIndicator(
 @Composable
 fun PagerIndicatorWithPreview() {
     val pagerState = rememberPagerState(
-        pageCount = { 5 }
+        pageCount = { 5 },
     )
     PreviewSurface {
         PagerWithIndicator(
             pageCount = 5,
-            pagerState = pagerState
+            pagerState = pagerState,
         ) { pageIndex ->
             CwText(
                 text = "Page $pageIndex",
-                textType = TextType.LABEL_LARGE
+                textType = TextType.LABEL_LARGE,
             )
         }
     }

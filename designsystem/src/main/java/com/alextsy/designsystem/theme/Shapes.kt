@@ -10,7 +10,7 @@ data class Shapes(
     val button: Shape = RoundedCornerShape(12.dp),
     val dots: Shape = CircleShape,
     val pagerIndicator: Shape = RoundedCornerShape(percent = 50),
-    val bar: Shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)
+    val bar: Shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp),
 )
 
 val LocalShapes = compositionLocalOf { Shapes() }

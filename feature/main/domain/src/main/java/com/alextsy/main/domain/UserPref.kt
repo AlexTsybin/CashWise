@@ -9,5 +9,5 @@ data class UserPref(
     val authType: AuthConfig,
     val theme: ThemeConfig,
     val defaultCurrency: String,
-    val isNotificationEnabled: Boolean
+    val isNotificationEnabled: Boolean,
 )

@@ -48,14 +48,14 @@ private fun Onboarding(
         modifier = Modifier
             .fillMaxSize()
             .padding(LocalDimensions.current.dimensions16),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         val coroutineScope = rememberCoroutineScope()
         val pageCount = stringArrayResource(R.array.onboarding_title).size
         val pagerState = rememberPagerState(
             initialPage = 0,
             initialPageOffsetFraction = 0f,
-            pageCount = { pageCount }
+            pageCount = { pageCount },
         )
         val buttonText = if (pagerState.currentPage == pageCount - 1) {
             stringResource(R.string.welcome_get_started)
@@ -68,17 +68,17 @@ private fun Onboarding(
                 .weight(1f)
                 .padding(bottom = LocalDimensions.current.dimensions24),
             pageCount = pageCount,
-            pagerState = pagerState
+            pagerState = pagerState,
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(bottom = LocalDimensions.current.dimensions16),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Lottie(
                     lottieUrl = stringArrayResource(R.array.onboarding_animation)[it],
-                    modifier = Modifier.size(LocalDimensions.current.dimensions300)
+                    modifier = Modifier.size(LocalDimensions.current.dimensions300),
                 )
                 Spacer(modifier = Modifier.weight(1f))
                 CwText(
@@ -87,16 +87,16 @@ private fun Onboarding(
                         spans = listOf(
                             SpanType.HeadingSpan(
                                 text = stringArrayResource(R.array.onboarding_title)[it].split(" ")[0],
-                                styles = SpanStyle(color = MaterialTheme.colorScheme.primary)
-                            )
-                        )
+                                styles = SpanStyle(color = MaterialTheme.colorScheme.primary),
+                            ),
+                        ),
                     ),
-                    textType = TextType.HEADLINE_SMALL
+                    textType = TextType.HEADLINE_SMALL,
                 )
                 Spacer(modifier = Modifier.padding(LocalDimensions.current.dimensions8))
                 CwText(
                     text = stringArrayResource(R.array.onboarding_description)[it],
-                    textType = TextType.LABEL_SMALL
+                    textType = TextType.LABEL_SMALL,
                 )
                 Spacer(modifier = Modifier.padding(vertical = LocalDimensions.current.dimensions24))
             }
@@ -115,7 +115,7 @@ private fun Onboarding(
         CwButton(
             text = stringResource(R.string.skip),
             isFullWidth = true,
-            buttonType = ButtonType.TEXT
+            buttonType = ButtonType.TEXT,
         ) {
             dispatch(Event.OnboardingCompleted)
             onNextScreen.invoke()
@@ -128,7 +128,7 @@ private fun Onboarding(
 private fun IntroductionScreenPreview() {
     PreviewSurface {
         IntroductionScreen(
-            onNextScreen = {}
+            onNextScreen = {},
         )
     }
 }

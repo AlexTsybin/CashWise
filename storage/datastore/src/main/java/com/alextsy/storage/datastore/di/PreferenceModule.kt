@@ -15,7 +15,7 @@ val preferenceModule = module {
 
     single<DataStore<UserPreferences>> {
         DataStoreFactory.create(
-            serializer = get<UserPreferenceSerializer>()
+            serializer = get<UserPreferenceSerializer>(),
         ) {
             androidContext().dataStoreFile("user_preferences.pb")
         }

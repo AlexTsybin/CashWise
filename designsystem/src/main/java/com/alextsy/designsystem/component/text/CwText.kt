@@ -13,13 +13,13 @@ import com.alextsy.designsystem.component.preview.PreviewSurface
 fun CwText(
     text: String,
     textType: TextType,
-    textAlign: TextAlign = TextAlign.Left
+    textAlign: TextAlign = TextAlign.Left,
 ) {
     Text(
         text = text,
         textAlign = textAlign,
         style = textType.getStyle(),
-        color = textType.getColor()
+        color = textType.getColor(),
     )
 }
 
@@ -28,13 +28,13 @@ fun CwText(
     text: AnnotatedString,
     textType: TextType,
     modifier: Modifier = Modifier,
-    textAlign: TextAlign = TextAlign.Left
+    textAlign: TextAlign = TextAlign.Left,
 ) {
     Text(
         modifier = modifier,
         text = text,
         textAlign = textAlign,
-        style = textType.getStyle()
+        style = textType.getStyle(),
     )
 }
 
@@ -52,7 +52,7 @@ fun AllTextPreview() {
         CwText(
             text,
             TextType.BUTTON_LABEL,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
     }
 }

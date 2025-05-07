@@ -35,8 +35,8 @@ fun TextType.getStyle() =
         TextType.HEADLINE_SMALL -> MaterialTheme.typography.headlineSmall
         TextType.DISPLAY_SMALL_GRADIENT -> MaterialTheme.typography.displaySmall.copy(
             brush = Brush.linearGradient(
-                listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.secondary)
-            )
+                listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.secondary),
+            ),
         )
         TextType.BUTTON_LABEL -> MaterialTheme.typography.labelLarge
         TextType.DISPLAY_MEDIUM -> MaterialTheme.typography.displayMedium

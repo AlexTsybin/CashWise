@@ -14,22 +14,20 @@ import com.alextsy.onboarding.presentation.intro.IntroductionScreen
 import com.alextsy.onboarding.presentation.signin.SignInScreen
 import com.alextsy.onboarding.presentation.welcome.WelcomeScreen
 
-inline fun <reified T> NavGraphBuilder.cwComposable(
-    noinline content: @Composable () -> Unit
-) where T : Any, T : Destinations {
+inline fun <reified T> NavGraphBuilder.cwComposable(noinline content: @Composable () -> Unit) where T : Any, T : Destinations {
     composable<T>(
         enterTransition = {
             slideIntoContainer(
                 AnimatedContentTransitionScope.SlideDirection.Start,
-                tween(1000)
+                tween(1000),
             )
         },
         popExitTransition = {
             slideOutOfContainer(
                 AnimatedContentTransitionScope.SlideDirection.End,
-                tween(1000)
+                tween(1000),
             )
-        }
+        },
     ) {
         content()
     }
@@ -38,37 +36,35 @@ inline fun <reified T> NavGraphBuilder.cwComposable(
 fun NavGraphBuilder.navigateToOnboarding(
     navController: NavHostController,
     onboardingConfig: OnboardingConfig,
-    onError: (Boolean, UiText) -> Unit
+    onError: (Boolean, UiText) -> Unit,
 ) {
     navigation<Graphs.Onboarding>(
-        startDestination = getDestination(onboardingConfig)
+        startDestination = getDestination(onboardingConfig),
     ) {
         cwComposable<Destinations.Welcome> {
             WelcomeScreen(
-                onNextScreen = { navController.navigate(Destinations.Introduction) }
+                onNextScreen = { navController.navigate(Destinations.Introduction) },
             )
         }
 
         cwComposable<Destinations.Introduction> {
             IntroductionScreen(
-                onNextScreen = { navController.navigate(Destinations.SignIn) }
+                onNextScreen = { navController.navigate(Destinations.SignIn) },
             )
         }
 
         cwComposable<Destinations.SignIn> {
             SignInScreen(
                 onNextScreen = { navController.navigate(Destinations.Home) },
-                onError = onError
+                onError = onError,
             )
         }
     }
 }
 
-fun NavGraphBuilder.navigateToDashboard(
-    navController: NavHostController
-) {
+fun NavGraphBuilder.navigateToDashboard(navController: NavHostController) {
     navigation<Graphs.Dashboard>(
-        startDestination = Destinations.Home
+        startDestination = Destinations.Home,
     ) {
         cwComposable<Destinations.Home> {
             Text("Home")

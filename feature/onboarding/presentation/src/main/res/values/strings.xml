@@ -33,4 +33,8 @@
     <string name="sign_in_tnc_text">By signing up, you agree to the Terms of Service and Data Processing Agreement</string>
     <string name="sign_in_tnc_span_1">Terms of Service</string>
     <string name="sign_in_tnc_span_2">Data Processing Agreement</string>
+
+    <string name="error_invalid_credentials">Invalid credentials found</string>
+    <string name="error_invalid_user">Invalid User found</string>
+    <string name="error_unknown">Something was not correct! Report us at test@qmail.com</string>
 </resources>

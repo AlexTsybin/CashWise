@@ -21,7 +21,7 @@ private val DarkColorScheme = darkColorScheme(
     secondary = secondary,
     tertiary = tertiary,
     surfaceContainer = surfaceContainerDark,
-    onPrimary = onPrimary
+    onPrimary = onPrimary,
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -29,7 +29,7 @@ private val LightColorScheme = lightColorScheme(
     secondary = secondary,
     tertiary = tertiary,
     surfaceContainer = surfaceContainerLight,
-    onPrimary = onPrimary
+    onPrimary = onPrimary,
 )
 
 @Composable
@@ -37,7 +37,7 @@ fun CashWiseTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val view = LocalView.current
 
@@ -66,7 +66,7 @@ fun CashWiseTheme(
         MaterialTheme(
             colorScheme = colorScheme,
             typography = Typography,
-            content = content
+            content = content,
         )
     }
 }
