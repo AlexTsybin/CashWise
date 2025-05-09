@@ -15,9 +15,7 @@ import com.alextsy.designsystem.theme.LocalDimensions
 @Composable
 fun PreviewSurface(content: @Composable () -> Unit) {
     CashWiseTheme {
-        Surface(
-            modifier = Modifier.fillMaxSize()
-        ) {
+        Surface(modifier = Modifier.fillMaxSize()) {
             Column(
                 modifier = Modifier.padding(LocalDimensions.current.dimensions16),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
