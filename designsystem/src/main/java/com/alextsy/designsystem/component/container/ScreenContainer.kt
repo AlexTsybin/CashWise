@@ -22,18 +22,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.alextsy.designsystem.theme.LocalDimensions
 import com.alextsy.designsystem.utility.UiText
 
 @Composable
 fun ScreenContainer(
-    showError: Boolean = false,
-    errorMessage: UiText,
+    showBanner: Boolean = false,
+    bannerMessage: UiText,
+    isErrorBanner: Boolean = false,
     content: @Composable () -> Unit,
 ) {
-    var showErrorMessage by remember { mutableStateOf(showError) }
+    var showErrorMessage by remember { mutableStateOf(showBanner) }
 
-    LaunchedEffect(key1 = showError) {
-        showErrorMessage = showError
+    LaunchedEffect(key1 = showBanner) {
+        showErrorMessage = showBanner
     }
 
     Box(
@@ -41,12 +43,16 @@ fun ScreenContainer(
             .fillMaxSize()
             .systemBarsPadding(),
     ) {
-        content()
+        Box(
+            modifier = Modifier.padding(LocalDimensions.current.dimensions16),
+        ) {
+            content()
+        }
 
         AnimatedVisibility(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.errorContainer)
+                .background(if (isErrorBanner) MaterialTheme.colorScheme.errorContainer else MaterialTheme.colorScheme.primary)
                 .padding(8.dp),
             visible = showErrorMessage,
             enter = slideInVertically(
@@ -57,8 +63,8 @@ fun ScreenContainer(
         ) {
             val context = LocalContext.current
             Text(
-                text = errorMessage.getString(context),
-                color = MaterialTheme.colorScheme.onErrorContainer,
+                text = bannerMessage.getString(context),
+                color = if (isErrorBanner) MaterialTheme.colorScheme.onErrorContainer else MaterialTheme.colorScheme.onPrimary,
                 modifier = Modifier.align(Alignment.TopCenter),
             )
         }
