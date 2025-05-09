@@ -33,7 +33,8 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.feature.records.domain)
+    implementation(projects.storage.database)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
