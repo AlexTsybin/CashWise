@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="web_client_id">268852575667-bso1hevmoub8nmlou7gebq90ob84b1bp.apps.googleusercontent.com</string>
+    <string name="txt_category">Category</string>
+    <string name="txt_sub_category">Sub Category</string>
+    <string name="txt_select_date">Select Date</string>
+    <string name="txt_ok">OK</string>
+    <string name="txt_cancel">Cancel</string>
 </resources>
