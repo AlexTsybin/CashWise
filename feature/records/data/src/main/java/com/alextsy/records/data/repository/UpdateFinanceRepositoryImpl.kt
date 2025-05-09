@@ -25,7 +25,7 @@ class UpdateFinanceRepositoryImpl(
                 categoryId = transaction.categoryId,
                 subcategoryId = transaction.subcategoryId,
                 date = transaction.date,
-                notes = transaction.notes
+                notes = transaction.notes,
             )
         )
     }
@@ -45,13 +45,13 @@ class UpdateFinanceRepositoryImpl(
                 Category(
                     name = it.category.name,
                     icon = it.category.icon,
-                    id = it.category.id
+                    id = it.category.id,
                 ),
                 it.subcategories.map { subcategory ->
                     Category(
                         name = subcategory.name,
                         icon = subcategory.icon,
-                        id = subcategory.id
+                        id = subcategory.id,
                     )
                 }
             )
