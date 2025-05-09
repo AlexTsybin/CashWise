@@ -4,7 +4,7 @@ import com.alextsy.common.model.records.RecordTransactionType
 import com.alextsy.records.domain.repository.UpdateFinanceRepository
 
 class GetDefaultCategoryUseCase(
-    private val repository: UpdateFinanceRepository
+    private val repository: UpdateFinanceRepository,
 ) {
 
     suspend operator fun invoke(isIncome: Boolean) =
