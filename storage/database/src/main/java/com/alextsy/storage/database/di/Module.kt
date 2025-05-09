@@ -11,7 +11,7 @@ val roomModule = module {
         Room.databaseBuilder(
             get(),
             FinanceDatabase::class.java,
-            "finance_db"
+            "finance_db",
         ).addCallback(object : RoomDatabase.Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)

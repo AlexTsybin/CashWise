@@ -29,7 +29,10 @@ interface FinanceDao {
     suspend fun getAllTransactions(): List<TransactionEntity>
 
     @Query("SELECT * FROM transactions WHERE date BETWEEN :startDate AND :endDate")
-    suspend fun getTransactionsByDateRange(startDate: Long, endDate: Long): List<TransactionEntity>
+    suspend fun getTransactionsByDateRange(
+        startDate: Long,
+        endDate: Long,
+    ): List<TransactionEntity>
 
     @Transaction
     @Query("SELECT * FROM categories")
