@@ -26,7 +26,7 @@ class UpdateFinanceRepositoryImpl(
                 subcategoryId = transaction.subcategoryId,
                 date = transaction.date,
                 notes = transaction.notes,
-            )
+            ),
         )
     }
 
@@ -53,7 +53,7 @@ class UpdateFinanceRepositoryImpl(
                         icon = subcategory.icon,
                         id = subcategory.id,
                     )
-                }
+                },
             )
         }
     }
