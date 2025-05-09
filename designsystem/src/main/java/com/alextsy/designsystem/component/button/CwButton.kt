@@ -13,11 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.credentials.Credential
 import androidx.credentials.CredentialManager
 import androidx.credentials.GetCredentialRequest
+import com.alextsy.designsystem.BuildConfig
 import com.alextsy.designsystem.R
 import com.alextsy.designsystem.component.preview.CwPreview
 import com.alextsy.designsystem.component.preview.PreviewSurface
@@ -70,7 +70,7 @@ fun GoogleButton(
     val context = LocalContext.current
     val manager = CredentialManager.create(context)
     val scope = rememberCoroutineScope()
-    val clientId = stringResource(R.string.web_client_id)
+    val clientId = BuildConfig.WEB_CLIENT_ID
     CwButton(
         text = text,
         icon = R.drawable.google,
