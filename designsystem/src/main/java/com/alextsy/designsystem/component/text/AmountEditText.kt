@@ -18,7 +18,7 @@ import com.alextsy.designsystem.theme.graphExpense
 import com.alextsy.designsystem.theme.graphIncome
 
 @Composable
-fun AmountTextField(
+fun AmountEditText(
     defaultCurrency: String,
     value: String,
     isIncome: Boolean = true,
@@ -69,9 +69,9 @@ fun AmountTextField(
 
 @CwPreview
 @Composable
-fun AmountTextFieldPreview() {
+fun AmountEditTextPreview() {
     PreviewSurface {
-        AmountTextField(
+        AmountEditText(
             value = "1000",
             onValueChange = {},
             defaultCurrency = "$",
