@@ -24,17 +24,20 @@ import kotlinx.coroutines.delay
 fun CwApp(uiState: UiState.Success) {
     val navController = rememberNavController()
     CashWiseTheme(darkTheme = isDarkTheme(uiState)) {
-        var showErrorMessage by remember { mutableStateOf(false) }
-        var errorMessage by remember { mutableStateOf<UiText>(UiText.EmptyString) }
+        var showBanner by remember { mutableStateOf(false) }
+        var bannerMessage by remember { mutableStateOf<UiText>(UiText.EmptyString) }
 
-        LaunchedEffect(key1 = showErrorMessage) {
-            if (showErrorMessage) {
+        LaunchedEffect(key1 = showBanner) {
+            if (showBanner) {
                 delay(3000)
-                showErrorMessage = false
+                showBanner = false
             }
         }
 
-        ScreenContainer(showErrorMessage, errorMessage) {
+        ScreenContainer(
+            showBanner = showBanner,
+            bannerMessage = bannerMessage,
+        ) {
             NavHost(
                 navController = navController,
                 startDestination = getDestination(uiState.data.authType),
@@ -42,11 +45,17 @@ fun CwApp(uiState: UiState.Success) {
                 navigateToOnboarding(
                     navController,
                     onboardingConfig = uiState.data.onboardingStatus,
-                ) { showError, message ->
-                    showErrorMessage = showError
-                    errorMessage = message
+                ) { isShowBanner, message ->
+                    showBanner = isShowBanner
+                    bannerMessage = message
                 }
-                navigateToDashboard(navController)
+                navigateToDashboard(
+                    navController = navController,
+                    defaultCurrency = "$",
+                ) { isShowBanner, message, _ ->
+                    showBanner = isShowBanner
+                    bannerMessage = message
+                }
             }
         }
     }
