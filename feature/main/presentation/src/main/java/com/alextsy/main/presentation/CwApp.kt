@@ -23,7 +23,9 @@ import kotlinx.coroutines.delay
 @Composable
 fun CwApp(uiState: UiState.Success) {
     val navController = rememberNavController()
-    CashWiseTheme(darkTheme = isDarkTheme(uiState)) {
+    CashWiseTheme(
+        darkTheme = isDarkTheme(uiState),
+    ) {
         var showBanner by remember { mutableStateOf(false) }
         var bannerMessage by remember { mutableStateOf<UiText>(UiText.EmptyString) }
 

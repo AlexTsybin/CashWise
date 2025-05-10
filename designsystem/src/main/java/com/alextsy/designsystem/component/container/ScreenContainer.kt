@@ -41,7 +41,9 @@ fun ScreenContainer(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .systemBarsPadding(),
+            .systemBarsPadding()
+            .background(MaterialTheme.colorScheme.background),
+
     ) {
         Box(
             modifier = Modifier.padding(LocalDimensions.current.dimensions16),
