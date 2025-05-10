@@ -72,13 +72,13 @@ private fun Category(
             .fillMaxSize()
             .padding(
                 horizontal = LocalDimensions.current.dimensions16,
-                vertical = LocalDimensions.current.dimensions8
-            )
+                vertical = LocalDimensions.current.dimensions8,
+            ),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(LocalDimensions.current.dimensions16)
+            horizontalArrangement = Arrangement.spacedBy(LocalDimensions.current.dimensions16),
         ) {
             Icon(
                 imageVector = Icons.Default.ArrowBackIosNew,
@@ -87,11 +87,11 @@ private fun Category(
                 modifier = Modifier
                     .clickable {
                         onBackPress()
-                    }
+                    },
             )
             CwText(
                 text = "Select Category",
-                textType = TextType.LABEL_LARGE
+                textType = TextType.LABEL_LARGE,
             )
         }
         Spacer(modifier = Modifier.height(LocalDimensions.current.dimensions8))
@@ -118,12 +118,12 @@ fun CategoryItemRow(
             }
             .padding(
                 vertical = LocalDimensions.current.dimensions12,
-                horizontal = LocalDimensions.current.dimensions8
+                horizontal = LocalDimensions.current.dimensions8,
             ),
-        verticalArrangement = Arrangement.spacedBy(LocalDimensions.current.dimensions16)
+        verticalArrangement = Arrangement.spacedBy(LocalDimensions.current.dimensions16),
     ) {
         Row(
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             Box(
                 modifier = Modifier
@@ -131,25 +131,25 @@ fun CategoryItemRow(
                     .border(
                         width = 1.dp,
                         color = MaterialTheme.colorScheme.surfaceContainerHigh,
-                        shape = CircleShape
+                        shape = CircleShape,
                     )
                     .background(
                         color = MaterialTheme.colorScheme.surfaceContainer,
-                        shape = CircleShape
+                        shape = CircleShape,
                     )
                     .padding(LocalDimensions.current.dimensions8),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.Center,
             ) {
                 Text(
                     text = categorization.category.icon,
                     color = Color.White,
-                    fontSize = 16.sp
+                    fontSize = 16.sp,
                 )
             }
             Spacer(modifier = Modifier.width(LocalDimensions.current.dimensions16))
             CwText(
                 text = categorization.category.name,
-                textType = TextType.LABEL_LARGE
+                textType = TextType.LABEL_LARGE,
             )
         }
     }

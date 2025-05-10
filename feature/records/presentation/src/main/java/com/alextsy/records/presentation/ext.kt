@@ -17,6 +17,6 @@ fun <T> Flow<T>.stateInWhileActive(
     }.stateIn(
         scope = scope,
         started = SharingStarted.WhileSubscribed(5_000),
-        initialValue = initial
+        initialValue = initial,
     )
 }

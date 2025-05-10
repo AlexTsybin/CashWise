@@ -101,24 +101,22 @@ private fun AddRecords(
             .padding(LocalDimensions.current.dimensions16)
             .imePadding()
             .verticalScroll(scrollState),
-        verticalArrangement = Arrangement.spacedBy(24.dp)
+        verticalArrangement = Arrangement.spacedBy(24.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             CwText(
                 text = stringResource(R.string.txt_add_record),
-                textType = TextType.TITLE
+                textType = TextType.TITLE,
             )
             Icon(
                 imageVector = Icons.Default.Close,
                 contentDescription = stringResource(R.string.close),
                 tint = Color.White,
                 modifier = Modifier
-                    .clickable {
-
-                    }
+                    .clickable { },
             )
         }
         AnimatedTab(
@@ -126,7 +124,7 @@ private fun AddRecords(
             onCLick = { index ->
                 isIncome = index == 0
                 dispatch(FinanceEvent.UpdateCategories(isIncome))
-            }
+            },
         )
         AmountEditText(
             defaultCurrency = defaultCurrency,
@@ -134,7 +132,7 @@ private fun AddRecords(
             value = amount,
             onValueChange = {
                 amount = it
-            }
+            },
         )
         SelectCategory(
             categorization.category.name,
@@ -142,7 +140,7 @@ private fun AddRecords(
             onSelectCategory(isIncome)
         }
         Subcategories(
-            categorization.subcategories
+            categorization.subcategories,
         ) {
             subcategoryId = it
         }
@@ -150,7 +148,7 @@ private fun AddRecords(
             label = stringResource(R.string.date_time),
             onDateSelected = {
                 date = it
-            }
+            },
         )
         TransparentEditText(
             value = notes,
@@ -158,11 +156,11 @@ private fun AddRecords(
             hint = stringResource(R.string.add_notes_here),
             onValueChange = {
                 notes = it
-            }
+            },
         )
         CwButton(
             text = stringResource(R.string.add_records),
-            isFullWidth = true
+            isFullWidth = true,
         ) {
             dispatch(
                 FinanceEvent.SaveTransaction(
@@ -172,9 +170,9 @@ private fun AddRecords(
                         notes = notes,
                         categoryId = categorization.category.id,
                         subcategoryId = subcategoryId,
-                        date = date
-                    )
-                )
+                        date = date,
+                    ),
+                ),
             )
         }
     }

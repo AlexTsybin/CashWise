@@ -17,7 +17,7 @@ class TransactionCategoryViewModel(
         get() = mutableUiState
             .stateInWhileActive(
                 viewModelScope,
-                TransactionCategoryUiState.Initial
+                TransactionCategoryUiState.Initial,
             ) {}
 
     fun processEvent(event: TransactionCategoryEvent) {
