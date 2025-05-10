@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_add_record">Add Record</string>
+    <string name="close">Close</string>
+    <string name="default_currency">$</string>
+    <string name="date_time"><![CDATA[Date & Time]]></string>
+    <string name="notes">Notes</string>
+    <string name="add_notes_here">Add notes here</string>
+    <string name="add_records">Add records</string>
+
+    <string-array name="txt_record_types">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+</resources>
