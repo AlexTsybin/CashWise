@@ -116,7 +116,7 @@ private fun AddRecords(
                 contentDescription = stringResource(R.string.close),
                 tint = Color.White,
                 modifier = Modifier
-                    .clickable { },
+                    .clickable { }
             )
         }
         AnimatedTab(
@@ -124,7 +124,7 @@ private fun AddRecords(
             onCLick = { index ->
                 isIncome = index == 0
                 dispatch(FinanceEvent.UpdateCategories(isIncome))
-            },
+            }
         )
         AmountEditText(
             defaultCurrency = defaultCurrency,
