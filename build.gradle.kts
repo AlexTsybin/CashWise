@@ -21,6 +21,7 @@ subprojects {
             target("src/**/*.kt")
             targetExclude("build/**/*.kt")
             ktlint()
+                .setEditorConfigPath(rootProject.file(".editorconfig"))
                 .editorConfigOverride(
                     mapOf(
                         "max_line_length" to "140",
