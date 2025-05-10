@@ -14,4 +14,10 @@ sealed interface Destinations {
 
     @Serializable
     data object Home : Destinations
+
+    @Serializable
+    data object AddRecords : Destinations
+
+    @Serializable
+    data class SelectCategory(val isIncome: Boolean) : Destinations
 }
