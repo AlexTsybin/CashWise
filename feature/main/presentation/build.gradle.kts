@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -41,6 +42,7 @@ dependencies {
     implementation(projects.feature.onboarding.presentation)
     implementation(projects.designsystem)
     implementation(projects.feature.main.domain)
+    implementation(projects.feature.records.presentation)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
