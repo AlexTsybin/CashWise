@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.alextsy.common.model.formatAsCurrency
 import com.alextsy.designsystem.component.charts.LineChart
 import com.alextsy.designsystem.component.ext.amountColor
 import com.alextsy.designsystem.component.text.CwText

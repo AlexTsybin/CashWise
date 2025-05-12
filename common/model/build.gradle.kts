@@ -16,4 +16,5 @@ kotlin {
 dependencies {
     api(libs.arrow.core)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.ui.text.android)
 }
