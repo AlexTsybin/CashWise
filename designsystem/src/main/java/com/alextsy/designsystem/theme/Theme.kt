@@ -62,6 +62,7 @@ fun CashWiseTheme(
     CompositionLocalProvider(
         LocalDimensions provides Dimensions(),
         LocalShapes provides Shapes(),
+        LocalWindowType provides rememberWindowSize(),
     ) {
         MaterialTheme(
             colorScheme = colorScheme,

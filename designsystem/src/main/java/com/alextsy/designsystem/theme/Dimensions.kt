@@ -12,6 +12,7 @@ data class Dimensions(
     val dimensions12: Dp = 12.dp,
     val dimensions16: Dp = 16.dp,
     val dimensions24: Dp = 24.dp,
+    val dimensions20: Dp = 20.dp,
     val dimensions32: Dp = 32.dp,
     val dimensions40: Dp = 40.dp,
     val dimensions48: Dp = 48.dp,
