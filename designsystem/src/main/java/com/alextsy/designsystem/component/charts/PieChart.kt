@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import com.alextsy.common.model.charts.PieData
+import com.alextsy.common.model.formatAsCurrency
 import com.alextsy.designsystem.component.text.CwText
 import com.alextsy.designsystem.component.text.TextType
 

@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.alextsy.common.model.charts.CircleGraphData
+import com.alextsy.common.model.formatAsCurrency
 import com.alextsy.designsystem.component.charts.VennChart
 import com.alextsy.designsystem.component.chip.CategoryChip
 import com.alextsy.designsystem.component.text.CwText

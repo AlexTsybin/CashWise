@@ -15,6 +15,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.alextsy.common.model.charts.ProgressBarData
+import com.alextsy.common.model.formatAsCurrency
 import com.alextsy.designsystem.component.text.CwText
 import com.alextsy.designsystem.component.text.TextType
 import com.alextsy.designsystem.theme.LocalDimensions
