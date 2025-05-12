@@ -30,8 +30,39 @@ import com.alextsy.designsystem.R
 import com.alextsy.designsystem.component.preview.CwPreview
 import com.alextsy.designsystem.component.preview.PreviewSurface
 import com.alextsy.designsystem.component.text.CwText
+import com.alextsy.designsystem.component.text.LegendItem
 import com.alextsy.designsystem.component.text.TextType
 import com.alextsy.designsystem.theme.LocalDimensions
+
+@Composable
+fun CategoryChip(
+    text: String,
+    iconColor: String,
+) {
+    Row(
+        modifier = Modifier
+            .clip(RoundedCornerShape(LocalDimensions.current.dimensions16))
+            .border(
+                width = LocalDimensions.current.dimensions2,
+                color = MaterialTheme.colorScheme.surfaceContainerHigh,
+                shape = RoundedCornerShape(LocalDimensions.current.dimensions64),
+            )
+            .background(
+                color = MaterialTheme.colorScheme.surface,
+                shape = RoundedCornerShape(LocalDimensions.current.dimensions64),
+            )
+            .padding(
+                horizontal = LocalDimensions.current.dimensions12,
+                vertical = LocalDimensions.current.dimensions8,
+            ),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        LegendItem(
+            label = text,
+            color = Color(android.graphics.Color.parseColor(iconColor)),
+        )
+    }
+}
 
 @Composable
 private fun SubCategoryChip(
