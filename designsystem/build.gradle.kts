@@ -62,4 +62,6 @@ dependencies {
     api(libs.material.icons.extended)
     debugImplementation(libs.ui.tooling)
     implementation(libs.lottie.compose)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 }
