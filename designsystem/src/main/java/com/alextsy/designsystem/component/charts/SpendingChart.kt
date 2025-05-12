@@ -28,31 +28,31 @@ fun SpendingItem(
     val animatedProgress by animateFloatAsState(
         targetValue = targetProgress,
         animationSpec = tween(durationMillis = 1000, easing = FastOutSlowInEasing),
-        label = "Progress Animation"
+        label = "Progress Animation",
     )
 
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
     ) {
         Spacer(modifier = Modifier.height(LocalDimensions.current.dimensions8))
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             CwText(
                 text = spending.valueLabel,
-                textType = TextType.LABEL_SMALL
+                textType = TextType.LABEL_SMALL,
             )
             CwText(
                 text = spending.value.formatAsCurrency(),
-                textType = TextType.LABEL_LARGE
+                textType = TextType.LABEL_LARGE,
             )
         }
         Spacer(modifier = Modifier.height(LocalDimensions.current.dimensions8))
         ProgressBar(
             progress = animatedProgress,
             progressForeground = Color(android.graphics.Color.parseColor(spending.valueColor)),
-            progressBackground = MaterialTheme.colorScheme.surfaceContainer
+            progressBackground = MaterialTheme.colorScheme.surfaceContainer,
         )
         Spacer(modifier = Modifier.height(LocalDimensions.current.dimensions12))
     }

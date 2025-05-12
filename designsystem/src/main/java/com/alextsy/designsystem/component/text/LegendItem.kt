@@ -20,20 +20,20 @@ fun LegendItem(
     color: Color,
 ) {
     Row(
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Box(
             modifier = Modifier
                 .size(LocalDimensions.current.dimensions12)
                 .background(
                     color = color,
-                    shape = RoundedCornerShape(6.dp)
-                )
+                    shape = RoundedCornerShape(6.dp),
+                ),
         )
         Spacer(modifier = Modifier.width(LocalDimensions.current.dimensions4))
         CwText(
             text = label,
-            textType = TextType.LABEL_LARGE
+            textType = TextType.LABEL_LARGE,
         )
     }
 }

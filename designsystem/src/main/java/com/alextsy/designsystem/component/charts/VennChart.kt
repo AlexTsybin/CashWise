@@ -41,7 +41,7 @@ fun VennChart(
         coroutineScope.launch {
             animateProgress.animateTo(
                 targetValue = 1f,
-                animationSpec = tween(1000)
+                animationSpec = tween(1000),
             )
         }
     }
@@ -63,10 +63,10 @@ fun VennChart(
                     list = data,
                     screenWidth = screenWidth,
                     indicatorBackground = indicatorBackground,
-                    animationProgress = animateProgress.value
+                    animationProgress = animateProgress.value,
                 )
-            }
-    ) {  }
+            },
+    ) { }
 }
 
 private fun DrawScope.drawIndicator(
@@ -86,7 +86,7 @@ private fun DrawScope.drawIndicator(
         topLeft = Offset(centerX - currentRadius, centerY - currentRadius),
         size = Size(currentRadius * 2, currentRadius * 2),
         style = Stroke(width = arcWidth.toFloat(), cap = StrokeCap.Round),
-        alpha = 1.0f
+        alpha = 1.0f,
     )
 }
 
@@ -112,7 +112,7 @@ private fun DrawScope.drawPieIndicator(
                 sweepAngle = SWEEP_ANGLE,
                 currentRadius = currentRadius,
                 centerX = centerX,
-                centerY = centerY
+                centerY = centerY,
             )
             drawIndicator(
                 color = Color(android.graphics.Color.parseColor(chartEntry.valueColor)),
@@ -121,7 +121,7 @@ private fun DrawScope.drawPieIndicator(
                 sweepAngle = sweepAngle,
                 currentRadius = currentRadius,
                 centerX = centerX,
-                centerY = centerY
+                centerY = centerY,
             )
             currentRadius += RADIUS_INCREMENT_PER_CIRCLE * RADIUS_INCREMENT_RATIO
         }

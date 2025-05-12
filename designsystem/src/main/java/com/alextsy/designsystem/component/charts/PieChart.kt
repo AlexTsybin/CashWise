@@ -27,11 +27,11 @@ fun PieChart(
 ) {
     Box(
         modifier = Modifier.fillMaxWidth(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Canvas(
             modifier = Modifier
-                .size(LocalConfiguration.current.screenWidthDp.dp / factor)
+                .size(LocalConfiguration.current.screenWidthDp.dp / factor),
         ) {
             val sweepAngles = expenses.map {
                 (it.amount / totalExpense * 360).toFloat()
@@ -46,24 +46,24 @@ fun PieChart(
                     useCenter = false,
                     style = Stroke(
                         width = 12.dp.toPx(),
-                        cap = StrokeCap.Round
+                        cap = StrokeCap.Round,
                     ),
                     size = Size(size.width, size.height),
-                    topLeft = Offset(0f, 0f)
+                    topLeft = Offset(0f, 0f),
                 )
                 startAngle += sweepAngles[index]
             }
         }
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             CwText(
                 text = "Expense",
-                textType = TextType.LABEL_LARGE
+                textType = TextType.LABEL_LARGE,
             )
             CwText(
                 text = totalExpense.formatAsCurrency(),
-                textType = TextType.TITLE
+                textType = TextType.TITLE,
             )
         }
     }

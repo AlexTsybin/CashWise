@@ -12,11 +12,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun LineChart(
     expenses: List<Float>,
-    color: Color
+    color: Color,
 ) {
     Canvas(
         modifier = Modifier
-            .size(100.dp, 50.dp)
+            .size(100.dp, 50.dp),
     ) {
         val path = Path()
         if (expenses.isNotEmpty()) {
@@ -42,7 +42,7 @@ fun LineChart(
         drawPath(
             path = path,
             color = color,
-            style = Stroke(width = 3.dp.toPx())
+            style = Stroke(width = 3.dp.toPx()),
         )
     }
 }

@@ -24,8 +24,8 @@ fun ProgressBar(
             .height(LocalDimensions.current.dimensions12)
             .background(
                 color = progressBackground,
-                shape = RoundedCornerShape(5.dp)
-            )
+                shape = RoundedCornerShape(5.dp),
+            ),
     ) {
         Box(
             modifier = Modifier
@@ -33,8 +33,8 @@ fun ProgressBar(
                 .height(LocalDimensions.current.dimensions12)
                 .background(
                     color = progressForeground,
-                    shape = RoundedCornerShape(LocalDimensions.current.dimensions8)
-                )
+                    shape = RoundedCornerShape(LocalDimensions.current.dimensions8),
+                ),
         )
     }
 }
